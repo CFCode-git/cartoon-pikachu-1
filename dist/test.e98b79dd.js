@@ -117,79 +117,90 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"C:/Users/yeah!/AppData/Local/Yarn/Data/global/node_modules/parcel/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
+})({"css.js":[function(require,module,exports) {
+"use strict";
 
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var string = "\n.skin * {\n    margin:0;\n    padding: 0;\n    box-sizing:border-box;\n}\n\n.skin *::before,.skin *::after{\n    box-sizing:border-box;\n    content:'';\n    display: block;\n}\n\n.skin{\n    position: relative;\n    background: #ffe600; \n    min-height: 50vh;\n}\n.nose{\n    border:10px solid #000;\n    border-color:#000000 transparent transparent;\n    border-bottom:none;\n    width:0px;\n    height:0px;\n    position: absolute;\n    left:50%;\n    top:205px;\n    margin-left: -10px;\n    z-index: 10;\n}\n.nose .yuan{\n    width:20px;\n    height:5px;\n    position: absolute;\n    top:-15px;\n    left:-10px;\n    border-radius:6px 6px 0 0;\n    background: #000;\n}\n\n@keyframes wave{\n    0%{\n        transform: rotate(0deg);\n    }\n    33%{\n        transform: rotate(5deg);\n    }\n    66%{\n        transform: rotate(-5deg);\n    }\n    100%{\n        transform: rotate(0deg);\n    }\n}\n\n.nose:hover{\n    transform-origin: 50% 100%;\n    animation: wave 200ms infinite linear; \n}\n\n\n.eye{\n    border:3px solid #000000;\n    width:64px;\n    height:64px;\n    position: absolute;\n    top:160px;\n    left:50%;\n    margin-left:-32px;\n    border-radius: 50%;\n    background: #2e2e2e;\n}\n\n.eye.left{\n    transform: translateX(-100px);\n}\n.eye.right{\n    transform: translateX(100px);\n}\n.eye.left::before{\n    border:2px solid #000000;\n    width:30px;\n    height:30px;\n    border-radius:50%;\n    background: #ffffff;\n    position: relative;\n    top:2px;\n    left:2px;\n}\n.eye.right::before{\n    border:2px solid #000000;\n    width:30px;\n    height:30px;\n    border-radius:50%;\n    background: #ffffff;\n    position: relative;\n    top:2px;\n    left:2px;\n}\n\n.mouth{\n    width:200px;\n    height:200px;\n    position: absolute;\n    left:50%;\n    margin-left:-100px;\n    top:230px;\n}\n\n.mouth .up {\n    position: relative;\n    top:-20px;\n    z-index: 1;\n}\n\n.mouth .up .lip{\n    border:5px solid black;\n    height: 30px;\n    width: 100px;\n    border-top-color:transparent;\n    position: absolute;\n    left:50%;\n    margin-left:-50px;\n    background: #ffe600;\n}\n.mouth .up .lip.left{\n    border-radius:0 0 0 30px;\n    border-left-color:transparent;\n    transform: rotate(-15deg) translateX(-52px);\n}\n.mouth .up .lip.right{\n    border-radius:0 0 30px 0;\n    /* border-top-color:#ffe600;\n    border-right-color:#ffe600; */\n    border-right-color:transparent;\n    transform: rotate(15deg) translateX(52px);\n}\n\n.mouth .up .lip::before{\n    width:7px;\n    height:30px;\n    position: absolute;\n    bottom: 0px;\n    background: #ffe600;\n\n}\n.mouth .up .lip.left::before{\n    right:-6px;\n}\n.mouth .up .lip.right::before{\n    left:-6px;\n}\n\n.mouth .down{\n    width:100%;\n    height:150px;\n    position: absolute;\n    top:0px;\n    overflow: hidden;\n}\n\n.mouth .down .yuan1 {\n    border:3px solid #000;\n    width:150px;\n    height:1000px;\n    position: absolute;\n    bottom:0px;\n    left:50%;\n    margin-left:-75px;\n    border-radius:90px / 400px;\n    background: #9b000a;\n    overflow: hidden;\n}\n.mouth .down .yuan1 .yuan2{\n    border:1px solid red;\n    width: 200px;\n    height:300px;\n    position: absolute;\n    bottom: -190px;\n    left:50%;\n    margin-left:-100px;\n    background: #ff485f;\n    border-radius:100px;\n}\n\n.face{\n    border:2px solid #000000;\n    width:80px;\n    height:80px;\n    position: absolute;\n    left:50%;\n    margin-left:-40px;\n    top:250px;\n    z-index: 5;\n    background: #ff0000;\n    border-radius: 50%;\n}\n\n.face.left{\n    transform: translateX(-160px);\n}\n\n.face.right{\n    transform: translateX(160px);\n}\n\n.face>img{\n    position:absolute;\n    left: 50%;\n    top:50%;\n}\n\n.face.left>img{\n    transform: rotateY(180deg);\n    transform-origin: 0 0;\n}\n";
+var _default = string;
+exports.default = _default;
+},{}],"test.js":[function(require,module,exports) {
+"use strict";
 
-  return bundleURL;
-}
+var _css = _interopRequireDefault(require("./css.js"));
 
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"C:/Users/yeah!/AppData/Local/Yarn/Data/global/node_modules/parcel/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
-  };
-
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
+var player = {
+  id: undefined,
+  n: 1,
+  speed: 100,
+  ui: {
+    demo: document.querySelector('#demo'),
+    demo2: document.querySelector('#demo2')
+  },
+  events: {
+    '#btnPause': 'pause',
+    '#btnPlay': 'play',
+    '#btnSlow': 'slow',
+    '#btnNormal': 'normal',
+    '#btnFast': 'fast'
+  },
+  init: function init() {
+    // 初始化
+    player.ui.demo.innerText = _css.default.substr(0, player.n);
+    player.ui.demo2.innerHTML = _css.default.substr(0, player.n);
+    player.bindEvents();
+    player.play();
+  },
+  bindEvents: function bindEvents() {
+    for (var key in player.events) {
+      if (player.events.hasOwnProperty(key)) {
+        var value = player.events[key];
+        document.querySelector(key).onclick = player[value];
       }
     }
+  },
+  run: function run() {
+    player.n += 1;
 
-    cssTimeout = null;
-  }, 50);
-}
+    if (player.n > _css.default.length) {
+      window.clearInterval(player.id);
+      return;
+    }
 
-module.exports = reloadCSS;
-},{"./bundle-url":"C:/Users/yeah!/AppData/Local/Yarn/Data/global/node_modules/parcel/src/builtins/bundle-url.js"}],"style.css":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"_css_loader":"C:/Users/yeah!/AppData/Local/Yarn/Data/global/node_modules/parcel/src/builtins/css-loader.js"}],"C:/Users/yeah!/AppData/Local/Yarn/Data/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+    player.ui.demo.innerText = _css.default.substr(0, player.n);
+    player.ui.demo2.innerHTML = _css.default.substr(0, player.n);
+    player.ui.demo.scrollTop = player.ui.demo.scrollHeight;
+  },
+  play: function play() {
+    player.pause();
+    player.id = setInterval(player.run, player.speed);
+  },
+  pause: function pause() {
+    window.clearInterval(player.id);
+  },
+  slow: function slow() {
+    player.speed = 300;
+    player.pause();
+    player.play();
+  },
+  normal: function normal() {
+    player.speed = 100;
+    player.pause();
+    player.play();
+  },
+  fast: function fast() {
+    player.speed = 0;
+    player.pause();
+    player.play();
+  }
+};
+player.init();
+},{"./css.js":"css.js"}],"C:/Users/yeah!/AppData/Local/Yarn/Data/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -217,7 +228,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "13509" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "14543" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -393,5 +404,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["C:/Users/yeah!/AppData/Local/Yarn/Data/global/node_modules/parcel/src/builtins/hmr-runtime.js"], null)
-//# sourceMappingURL=/style.e308ff8e.js.map
+},{}]},{},["C:/Users/yeah!/AppData/Local/Yarn/Data/global/node_modules/parcel/src/builtins/hmr-runtime.js","test.js"], null)
+//# sourceMappingURL=/test.e98b79dd.js.map
